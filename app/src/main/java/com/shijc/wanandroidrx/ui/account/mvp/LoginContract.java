@@ -2,7 +2,7 @@ package com.shijc.wanandroidrx.ui.account.mvp;
 
 import com.shijc.wanandroidrx.common.mvp.IPresenter;
 import com.shijc.wanandroidrx.common.mvp.IView;
-import com.shijc.wanandroidrx.ui.account.bean.LoginReuslt;
+import com.shijc.wanandroidrx.ui.account.bean.LoginResult;
 
 /**
  * @author shijiacheng
@@ -13,7 +13,7 @@ import com.shijc.wanandroidrx.ui.account.bean.LoginReuslt;
  */
 public class LoginContract {
     public interface View extends IView {
-        void onLoginResult(LoginReuslt result);
+        void onLoginResult(LoginResult result);
     }
 
     public interface Presenter extends IPresenter {

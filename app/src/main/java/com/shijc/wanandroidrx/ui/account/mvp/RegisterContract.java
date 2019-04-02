@@ -2,7 +2,7 @@ package com.shijc.wanandroidrx.ui.account.mvp;
 
 import com.shijc.wanandroidrx.common.mvp.IPresenter;
 import com.shijc.wanandroidrx.common.mvp.IView;
-import com.shijc.wanandroidrx.ui.account.bean.LoginReuslt;
+import com.shijc.wanandroidrx.ui.account.bean.LoginResult;
 
 /**
  * @author shijiacheng
@@ -14,7 +14,7 @@ import com.shijc.wanandroidrx.ui.account.bean.LoginReuslt;
 public class RegisterContract {
 
     interface View extends IView {
-        void onRegisterResult(LoginReuslt result);
+        void onRegisterResult(LoginResult result);
     }
 
     interface Presenter extends IPresenter {

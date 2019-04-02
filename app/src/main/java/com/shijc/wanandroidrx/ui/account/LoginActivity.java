@@ -12,7 +12,7 @@ import com.shijc.wanandroidrx.R;
 import com.shijc.wanandroidrx.common.base.MessageEvent;
 import com.shijc.wanandroidrx.common.base.Preference;
 import com.shijc.wanandroidrx.common.mvp.BaseActivity;
-import com.shijc.wanandroidrx.ui.account.bean.LoginReuslt;
+import com.shijc.wanandroidrx.ui.account.bean.LoginResult;
 import com.shijc.wanandroidrx.ui.account.mvp.LoginContract;
 import com.shijc.wanandroidrx.ui.account.mvp.LoginPresenter;
 import org.greenrobot.eventbus.EventBus;
@@ -92,7 +92,7 @@ public class LoginActivity extends BaseActivity {
         }
 
         @Override
-        public void onLoginResult(LoginReuslt result) {
+        public void onLoginResult(LoginResult result) {
             if (result.getErrorCode() == 0){
                 userNamePref = result.getData().getUsername();
                 Preference.putData("userName",userNamePref);

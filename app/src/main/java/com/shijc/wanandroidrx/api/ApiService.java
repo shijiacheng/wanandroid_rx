@@ -1,6 +1,6 @@
 package com.shijc.wanandroidrx.api;
 
-import com.shijc.wanandroidrx.ui.account.bean.LoginReuslt;
+import com.shijc.wanandroidrx.ui.account.bean.LoginResult;
 import com.shijc.wanandroidrx.ui.home.bean.ArticleResult;
 import com.shijc.wanandroidrx.ui.home.bean.BannerModel;
 import com.shijc.wanandroidrx.ui.navi.bean.NaviResult;
@@ -121,7 +121,7 @@ public interface ApiService {
      */
     @FormUrlEncoded
     @POST("user/login")
-    Observable<LoginReuslt> login(@Field("username") String username,@Field("password") String password);
+    Observable<LoginResult> login(@Field("username") String username, @Field("password") String password);
 
 
     /**

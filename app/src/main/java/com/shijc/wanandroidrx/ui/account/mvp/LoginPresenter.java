@@ -3,7 +3,7 @@ package com.shijc.wanandroidrx.ui.account.mvp;
 import com.shijc.wanandroidrx.api.ApiService;
 import com.shijc.wanandroidrx.common.mvp.IView;
 import com.shijc.wanandroidrx.http.ApiStore;
-import com.shijc.wanandroidrx.ui.account.bean.LoginReuslt;
+import com.shijc.wanandroidrx.ui.account.bean.LoginResult;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -24,14 +24,14 @@ public class LoginPresenter implements LoginContract.Presenter{
         ApiStore.createApi(ApiService.class).login(username, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<LoginReuslt>() {
+                .subscribe(new Observer<LoginResult>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(LoginReuslt loginReuslt) {
+                    public void onNext(LoginResult loginReuslt) {
                         mView.onLoginResult(loginReuslt);
                     }
 
