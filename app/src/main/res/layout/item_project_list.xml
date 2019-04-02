@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+android:background="@color/white">
+
+    <LinearLayout
+            android:layout_margin="@dimen/padding_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <ImageView
+                android:id="@+id/iv_cover"
+                android:layout_width="90dp"
+                android:layout_height="110dp"
+                android:src="@color/colorPrimary"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/padding_middle"
+            android:layout_marginBottom="@dimen/padding_middle"
+            android:layout_marginRight="@dimen/padding_middle">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+        >
+            <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="正文"
+                    android:textSize="@dimen/font_h4"
+                    android:textColor="@color/mainText"
+                    android:maxLines="3"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/padding_small">
+            <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="sjokoacjemg"
+                    android:textSize="@dimen/font_h6"
+                    android:textColor="@color/mainTextGray"
+                    android:maxLines="3"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/padding_small">
+            <TextView
+                    android:id="@+id/tv_author"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="sjokoacjemg"
+                    android:textSize="@dimen/font_h5"
+                    android:textColor="@color/mainTextGray"
+                    android:lines="1"
+            />
+
+            <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7小时前"
+                    android:textSize="@dimen/font_h5"
+                    android:textColor="@color/mainTextGray"
+                    android:lines="1"
+            />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_navigation_home"
+        android:icon="@drawable/index"
+        android:title="首页" />
+
+    <item
+        android:id="@+id/bottom_navigation_systemtree"
+        android:icon="@drawable/system"
+        android:title="体系" />
+
+    <item
+        android:id="@+id/bottom_navigation_wxarticle"
+        android:icon="@drawable/weixin"
+        android:title="公众号" />
+
+    <item
+        android:id="@+id/bottom_navigation_navi"
+        android:icon="@drawable/navi"
+        android:title="导航" />
+
+    <item
+        android:id="@+id/bottom_navigation_project"
+        android:icon="@drawable/project"
+        android:title="项目" />
+
+</menu>
