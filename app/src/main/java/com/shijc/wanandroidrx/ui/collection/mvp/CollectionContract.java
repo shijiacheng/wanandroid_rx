@@ -2,7 +2,6 @@ package com.shijc.wanandroidrx.ui.collection.mvp;
 
 import com.shijc.wanandroidrx.common.mvp.IPresenter;
 import com.shijc.wanandroidrx.common.mvp.IView;
-import com.shijc.wanandroidrx.ui.account.bean.LoginReuslt;
 import com.shijc.wanandroidrx.ui.home.bean.ArticleModel;
 
 import java.util.List;
