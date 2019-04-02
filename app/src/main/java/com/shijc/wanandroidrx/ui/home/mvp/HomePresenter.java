@@ -56,7 +56,9 @@ public class HomePresenter implements HomeContract.Presenter {
     @Override
     public void refresh(int page) {
 
-
+        /**
+         * 使用zip合并请求
+         */
         Observable.zip(articleObservable(page), bannerObservable(),
                 new BiFunction<ArticleResult, BannerModel, HomeModel>() {
                     @Override
@@ -90,34 +92,31 @@ public class HomePresenter implements HomeContract.Presenter {
 
     @Override
     public void load(final int page) {
-        ApiStore.createApi(ApiService.class)
-                .getArticleList(page)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<ArticleResult>(){
-                    @Override
-                    public void onSubscribe(Disposable d) {
+        articleObservable(page).subscribe(new Observer<ArticleResult>() {
+            @Override
+            public void onSubscribe(Disposable d) {
 
-                    }
+            }
 
-                    @Override
-                    public void onNext(ArticleResult result) {
-                        if (page == 0){
-                            mView.onRefresh(result.getData().getDatas());
-                        }else{
-                            mView.onLoad(result.getData().getDatas());
-                        }
-                    }
+            @Override
+            public void onNext(ArticleResult result) {
+                if (page == 0){
+                    mView.onRefresh(result.getData().getDatas());
+                }else{
+                    mView.onLoad(result.getData().getDatas());
+                }
+            }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        mView.failure(e.getMessage());
-                    }
+            @Override
+            public void onError(Throwable e) {
 
-                    @Override
-                    public void onComplete() {
+            }
 
-                    }
-                });
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
     }
 }
