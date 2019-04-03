@@ -45,10 +45,10 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Co
     @Override
     public void onBindViewHolder(@NonNull CollectionViewHolder holder, final int position) {
         if (holder instanceof CollectionViewHolder) {
-            holder.tvAuthor.setText(data.get(position).getAuthor());
-            holder.tvTime.setText(TimeUtils.long2String(data.get(position).getPublishTime(), TimeUtils.FORMAT_TYPE_1));
+            holder.tvAuthor.setText(context.getString(R.string.collect_author,data.get(position).getAuthor()));
+            holder.tvTime.setText(context.getString(R.string.collect_time,TimeUtils.long2String(data.get(position).getPublishTime(), TimeUtils.FORMAT_TYPE_1)));
             holder.tvContent.setText(data.get(position).getTitle());
-            holder.tvClassify.setText(data.get(position).getSuperChapterName());
+            holder.tvClassify.setText(context.getString(R.string.collect_sort,data.get(position).getChapterName()));
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

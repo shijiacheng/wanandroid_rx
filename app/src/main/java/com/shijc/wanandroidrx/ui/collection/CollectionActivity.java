@@ -1,11 +1,20 @@
 package com.shijc.wanandroidrx.ui.collection;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
+import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.shijc.wanandroidrx.R;
 import com.shijc.wanandroidrx.common.base.SimpleDividerItemDecoration;
@@ -22,7 +31,7 @@ import java.util.List;
  * @author shijiacheng
  * @version V1.0
  * @Package com.shijc.wanandroidrx.ui.collection
- * @Description:
+ * @Description: 我的收藏页面
  * @date 2019/4/2 上午 8:13
  */
 public class CollectionActivity extends BaseActivity {
@@ -47,10 +56,12 @@ public class CollectionActivity extends BaseActivity {
     private void initView(){
         tool_bar = findViewById(R.id.tool_bar);
         recycler_view = findViewById(R.id.recycler_view);
+        fab_add = findViewById(R.id.fab_add);
     }
 
     private Toolbar tool_bar;
     private XRecyclerView recycler_view;
+    private FloatingActionButton fab_add;
 
     private void initData(){
         setSupportActionBar(tool_bar);
@@ -77,7 +88,16 @@ public class CollectionActivity extends BaseActivity {
 
         });
 
+        recycler_view.setRefreshProgressStyle(ProgressStyle.BallPulse);
+        recycler_view.setLoadingMoreProgressStyle(ProgressStyle.BallPulse);
         recycler_view.refresh();
+
+        fab_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCustomDialog();
+            }
+        });
     }
 
     private CollectionContract.View mView = new CollectionContract.View(){
@@ -112,8 +132,6 @@ public class CollectionActivity extends BaseActivity {
             adapter.notifyDataSetChanged();
         }
 
-
-
     };
 
     @Override
@@ -124,5 +142,41 @@ public class CollectionActivity extends BaseActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private void showCustomDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_collect_add);
+        dialog.setCancelable(true);
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+        final EditText et_title = dialog.findViewById(R.id.et_title);
+        final EditText et_author = dialog.findViewById(R.id.et_author);
+        final EditText et_link = dialog.findViewById(R.id.et_link);
+
+
+        (dialog.findViewById(R.id.bt_close)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        ((Button) dialog.findViewById(R.id.bt_save)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
     }
 }

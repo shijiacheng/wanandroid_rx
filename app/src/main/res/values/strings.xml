@@ -2,7 +2,8 @@
     <string name="app_name">wanandroid_rx</string>
 
 
-    <string name="current_internet_invalid">当前网络未连接</string>
-    <string name="internet_base_url_null">baseUrl不能为空</string>
+    <string name="collect_author">作者：%1$s</string>
+    <string name="collect_sort">分类：%1$s</string>
+    <string name="collect_time">收藏时间：%1$s</string>
 
 </resources>
