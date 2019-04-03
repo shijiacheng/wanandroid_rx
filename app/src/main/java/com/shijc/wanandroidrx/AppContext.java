@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 import com.shijc.wanandroidrx.common.base.Preference;
+import org.litepal.LitePal;
 
 /**
  * @author shijiacheng
@@ -25,6 +26,7 @@ public class AppContext extends Application {
         super.onCreate();
         instance = this;
         Preference.getInstance(this,"config");
+        LitePal.initialize(this);
     }
 
     @Override

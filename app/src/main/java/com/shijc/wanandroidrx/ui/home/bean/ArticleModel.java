@@ -1,5 +1,9 @@
 package com.shijc.wanandroidrx.ui.home.bean;
 
+import com.google.gson.annotations.SerializedName;
+import org.litepal.annotation.Column;
+import org.litepal.crud.LitePalSupport;
+
 import java.util.List;
 
 /**
@@ -9,7 +13,7 @@ import java.util.List;
  * @Description:
  * @date 2019/4/3 上午 9:29
  */
-public class ArticleModel {
+public class ArticleModel extends LitePalSupport {
     /**
      * apkLink :
      * author : 鸿洋
@@ -35,7 +39,8 @@ public class ArticleModel {
      * visible : 1
      * zan : 0
      */
-
+    @SerializedName("id")
+    private int articleId;
     private String apkLink;
     private String author;
     private int chapterId;
@@ -45,7 +50,6 @@ public class ArticleModel {
     private String desc;
     private String envelopePic;
     private boolean fresh;
-    private int id;
     private String link;
     private String niceDate;
     private String origin;
@@ -55,9 +59,13 @@ public class ArticleModel {
     private String superChapterName;
     private String title;
     private int type;
+    @Column(ignore = true)
     private int userId;
+    @Column(ignore = true)
     private int visible;
+    @Column(ignore = true)
     private int zan;
+    @Column(ignore = true)
     private List<TagsBean> tags;
 
     public String getApkLink() {
@@ -132,12 +140,12 @@ public class ArticleModel {
         this.fresh = fresh;
     }
 
-    public int getId() {
-        return id;
+    public int getArticleId() {
+        return articleId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setArticleId(int articleId) {
+        this.articleId = articleId;
     }
 
     public String getLink() {
