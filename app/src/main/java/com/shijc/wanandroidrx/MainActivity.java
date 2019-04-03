@@ -19,7 +19,7 @@ import com.shijc.wanandroidrx.common.base.Preference;
 import com.shijc.wanandroidrx.common.mvp.BaseActivity;
 import com.shijc.wanandroidrx.http.ApiStore;
 import com.shijc.wanandroidrx.ui.account.LoginActivity;
-import com.shijc.wanandroidrx.ui.account.bean.LoginReuslt;
+import com.shijc.wanandroidrx.ui.account.bean.LoginResult;
 import com.shijc.wanandroidrx.ui.collection.CollectionActivity;
 import com.shijc.wanandroidrx.ui.home.HomeFragment;
 import com.shijc.wanandroidrx.ui.navi.NaviFragment;
@@ -260,14 +260,14 @@ public class MainActivity extends BaseActivity {
         ApiStore.createApi(ApiService.class).login(username, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<LoginReuslt>() {
+                .subscribe(new Observer<LoginResult>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(LoginReuslt loginReuslt) {
+                    public void onNext(LoginResult loginReuslt) {
                         EventBus.getDefault().post(new MessageEvent(1,username));
                     }
 
