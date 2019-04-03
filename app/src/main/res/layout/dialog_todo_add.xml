@@ -24,7 +24,7 @@
                     android:layout_width="?attr/actionBarSize"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:tint="@android:color/white"
+                    android:tint="@android:color/black"
                     app:srcCompat="@drawable/ic_close" />
 
             <TextView
@@ -34,7 +34,7 @@
                     android:gravity="center_vertical"
                     android:text="添加待办清单"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
             <Button
                     android:id="@+id/bt_save"
@@ -45,7 +45,7 @@
                     android:paddingLeft="@dimen/padding_small"
                     android:paddingRight="@dimen/padding_small"
                     android:text="保存"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
         </LinearLayout>
 
