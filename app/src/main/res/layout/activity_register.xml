@@ -1,53 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.account.RegisterActivity"
-        android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="@android:color/white"
+              android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="登录"
+            app:titleTextColor="@color/mainText"/>
 
-    </android.support.v7.widget.Toolbar>
 
-    <android.support.design.widget.TextInputLayout
-            android:id="@+id/til_username"
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content">
-        <EditText
-                android:layout_width="match_parent"
-                android:hint="请输入用户名"
-                android:layout_height="wrap_content" />
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-            android:id="@+id/til_password"
-            android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content">
-        <EditText
-                android:layout_width="match_parent"
-                android:hint="请输入密码"
-                android:layout_height="wrap_content" />
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-            android:id="@+id/til_pass_again"
-            android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content">
-        <EditText
-                android:layout_width="match_parent"
-                android:hint="请重新输入密码"
-                android:layout_height="wrap_content" />
-    </android.support.design.widget.TextInputLayout>
+            android:layout_height="match_parent">
 
-    <Button
-            android:id="@+id/btn_login"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="注册"/>
+        <LinearLayout
+                android:layout_width="330dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_large">
 
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/padding_middle" />
+
+            <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/ic_launcher"/>
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/padding_large" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_middle"
+                    android:text="Welcome Back,"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/blue_grey_800"
+                    android:textStyle="bold" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_middle"
+                    android:text="Sign in to continue"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/blue_grey_300"
+                    android:textStyle="bold" />
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="@color/blue_grey_800"
+                    android:textStyle="bold" />
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tie_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-4dp"
+                    android:layout_marginRight="-4dp"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/blue_grey_300"
+                    android:theme="@style/EditText.Grey" />
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/padding_large" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="@color/blue_grey_800"
+                    android:textStyle="bold" />
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tie_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-4dp"
+                    android:layout_marginRight="-4dp"
+                    android:inputType="textPassword"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/blue_grey_300"
+                    android:theme="@style/EditText.Grey" />
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/padding_middle" />
+
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/padding_large" />
+
+            <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="-4dp"
+                    android:layout_marginRight="-4dp"
+                    android:background="@drawable/btn_purple_a400"
+                    android:text="Login"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/padding_middle" />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_middle"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New user? "
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/blue_grey_300" />
+
+                <TextView
+                        android:id="@+id/sign_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:text="Sign Up"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/purple_A400"
+                        android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/padding_large" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>
