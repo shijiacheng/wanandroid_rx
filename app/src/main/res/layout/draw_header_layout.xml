@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:clickable="true"
-android:background="#ffffff">
+        android:background="#ffffff">
 
     <RelativeLayout
             android:id="@+id/id_draw_menu_header"
@@ -56,18 +56,40 @@ android:background="#ffffff">
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="@dimen/padding_large"
-            android:gravity="center_vertical"
-    >
+            android:gravity="center_vertical">
         <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/collect"
-        />
+                android:src="@drawable/collect"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="我的收藏"
+                android:textColor="@color/mainText"
+                android:textSize="@dimen/font_h5"
+                android:layout_marginLeft="@dimen/padding_middle"
+        />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:id="@+id/ll_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_large"
+            android:gravity="center_vertical">
+        <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/collect"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="浏览历史"
                 android:textColor="@color/mainText"
                 android:textSize="@dimen/font_h5"
                 android:layout_marginLeft="@dimen/padding_middle"

@@ -13,6 +13,8 @@
             android:label="@string/app_name"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".ui.history.HistoryActivity">
+        </activity>
         <activity android:name=".ui.todo.TodoActivity">
         </activity>
         <activity android:name=".ui.website.WebsiteActivity">

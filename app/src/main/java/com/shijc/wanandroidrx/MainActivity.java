@@ -21,6 +21,7 @@ import com.shijc.wanandroidrx.http.ApiStore;
 import com.shijc.wanandroidrx.ui.account.LoginActivity;
 import com.shijc.wanandroidrx.ui.account.bean.LoginResult;
 import com.shijc.wanandroidrx.ui.collection.CollectionActivity;
+import com.shijc.wanandroidrx.ui.history.HistoryActivity;
 import com.shijc.wanandroidrx.ui.home.HomeFragment;
 import com.shijc.wanandroidrx.ui.navi.NaviFragment;
 import com.shijc.wanandroidrx.ui.project.ProjectFragment;
@@ -55,6 +56,7 @@ public class MainActivity extends BaseActivity {
     private ViewGroup ll_collection;
     private ViewGroup ll_website;
     private ViewGroup ll_todo;
+    private ViewGroup ll_history;
     private TextView tvUser;
     private ImageView ivAvatar;
     private DrawerLayout drawerLayout;
@@ -107,6 +109,7 @@ public class MainActivity extends BaseActivity {
         ll_collection = findViewById(R.id.ll_collection);
         ll_website = findViewById(R.id.ll_website);
         ll_todo = findViewById(R.id.ll_todo);
+        ll_history = findViewById(R.id.ll_history);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//左侧添加一个默认的返回图标
@@ -154,6 +157,12 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,TodoActivity.class));
+            }
+        });
+        ll_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, HistoryActivity.class));
             }
         });
     }
@@ -228,7 +237,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+//        super.onBackPressed();
         Intent i = new Intent(Intent.ACTION_MAIN);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.addCategory(Intent.CATEGORY_HOME);

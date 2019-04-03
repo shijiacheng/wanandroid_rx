@@ -11,11 +11,6 @@ import android.view.View;
 import android.view.WindowManager;
 
 public class BaseActivity extends AppCompatActivity {
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
 
     @Override
     public void setContentView(int layoutResID) {
